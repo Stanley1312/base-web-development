@@ -971,7 +971,63 @@
         line-height: 2rem;
     }
   }
+  #comments{
+    width: 650px;
+    border: 1px solid grey;
+    height: 300px;
+    word-wrap: break-word;
+    overflow: auto;
+  }
+    #new-comment {
+      margin: 0 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    #comment-box{
+      display: flex;
+      margin: 50px;
+      justify-content: center;
+    }
+    #comment{
+      height: 100px;
+      width: 400px;
+      
+    }
+    #submit{
+      display: block;
+      width: 150px;
+      margin: 20px 0 0;
+    }
+    #ncmt{
+     
+      
+      
+    }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#submit').disabled = true;
+        document.querySelector('#comment').onkeyup = function () {
+          if (document.querySelector('#comment').value.length > 0){
+          document.querySelector('#submit').disabled = false;
+          }
+          else {
+            document.querySelector('#submit').disabled = true;
+          }
+        };
+
+      document.querySelector('#new-comment').onsubmit = function () {
+        const ncmt = document.createElement('p') ;
+        ncmt.id = 'ncmt';
+        ncmt.innerHTML = document.querySelector('#comment').value;
+
+        document.querySelector('#comments').append(ncmt);
+        document.querySelector('#comment').value = '';
+        document.querySelector('#submit').disabled = true;
+        return false;
+      }
+    })
+    </script>
   </head>
   <body>
     <header>
@@ -1180,6 +1236,13 @@
         </div>
       </div>
     </section>
+    <div id="comment-box">
+      <div id="comments"></div>
+      <form id="new-comment">
+        <textarea id="comment" placeholder="Please Leaving with your comment!" > </textarea>
+        <input id="submit"  type="submit" value="Comment">
+      </form>
+    </div>
     <footer>
       <div class="fanh">
         <div class="fatext">

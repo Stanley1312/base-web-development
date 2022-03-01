@@ -27,7 +27,7 @@
         justify-content: center;
         position: relative;
         background-color: white;
-        transition: 0.07s;
+        transition:all 0.1s;
     }
     .playing{
         transform: scale(1.1);
@@ -76,15 +76,6 @@
     }
 
     </style>
-    <script>
-        document.addEventListener('keydown', function(e) {
-           const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-            if(!audio) return;
-           audio.currentTime = 0;
-           audio.play();
-        });
-
-    </script>
 </head>
 <body>
 <div>
@@ -116,5 +107,21 @@
 <audio data-key="75" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/hihat-close.wav"></audio>
 
 </body>
+<script>
+    document.addEventListener('keydown', function(e) {
+       const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+       const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+        if(!audio) return;
+       audio.currentTime = 0;
+       audio.play();
+       key.classList.add('playing');
+    });
+    function removeTransition(e) {
+        this.classList.remove('playing');
+    }
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+   
 
+</script>
 </html>

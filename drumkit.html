@@ -19,115 +19,72 @@
         left: 450px;
         width: 165px;
     }
-    .key-E{
-        
+    .key{
         display: flex;
         border: solid 2px rgb(12, 8, 8);
         height: 20px;
         width: 20px;
         justify-content: center;
         position: relative;
+        background-color: white;
+        transition: 0.07s;
+    }
+    .playing{
+        transform: scale(1.1);
+        border: solid 2px rgb(5, 165, 157);
+    }
+    .key[data-key="69"]{
         bottom: 380px;
         left: 300px;
     }
-    .key-R{
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 21px;
-        width: 21px;
-        justify-content: center;
-        position: relative;
+    .key[data-key="82"]{
         bottom: 403px;
         left: 358px;
     }
-    .key-I{
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        position: relative;
+    .key[data-key="73"]{
         bottom: 403px;
         left: 610px;
     }
-    .key-K{
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        position: relative;
+    .key[data-key="75"]{
         bottom: 425px;
         left: 690px;
     }
-    .key-G{
-        background-color: white;
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        position: relative;
+    .key[data-key="71"]{
         bottom: 370px;
         left: 430px;
     }
-    .key-H{
-        background-color: white;
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        position: relative;
+    .key[data-key="72"]{
+
         bottom: 385px;
         left: 540px;
     }
-    .key-J{
-        background-color: white;
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        position: relative;
+    .key[data-key="74"]{
         bottom: 380px;
         left: 620px;
     }
-    .key-F{
-        background-color: white;
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        position: relative;
+    .key[data-key="70"]{
         bottom: 360px;
         left: 350px;
     }
-    .key-V{
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        background-color: white;
-        position: relative;
+    .key[data-key="86"]{ 
         bottom: 360px;
         left: 460px;    
     }
-    .key-B{
-        display: flex;
-        border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
-        justify-content: center;
-        background-color: white;
-        position: relative;
+    .key[data-key="66"]{
         bottom: 383px;
         left: 520px;
     }
 
     </style>
+    <script>
+        document.addEventListener('keydown', function(e) {
+           const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            if(!audio) return;
+           audio.currentTime = 0;
+           audio.play();
+        });
+
+    </script>
 </head>
 <body>
 <div>
@@ -136,16 +93,16 @@
     <img class="right-hat" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/img/hihat-top.png"/>
 </div>
 <div class="keys">
-    <div class="key-E" data-key="69">E</div>
-    <div class="key-R" data-key="82">R</div>
-    <div class="key-I" data-key="73">I</div>
-    <div class="key-K" data-key="75">K</div>
-    <div class="key-G" data-key="71">G</div>
-    <div class="key-H" data-key="72">H</div>
-    <div class="key-J" data-key="74">J</div>
-    <div class="key-F" data-key="70">F</div>
-    <div class="key-V" data-key="86">V</div>
-    <div class="key-B" data-key="66">B</div>
+    <div class="key" data-key="69">E</div>
+    <div class="key" data-key="82">R</div>
+    <div class="key" data-key="73">I</div>
+    <div class="key" data-key="75">K</div>
+    <div class="key" data-key="71">G</div>
+    <div class="key" data-key="72">H</div>
+    <div class="key" data-key="74">J</div>
+    <div class="key" data-key="70">F</div>
+    <div class="key" data-key="86">V</div>
+    <div class="key" data-key="66">B</div>
 </div>
 <audio data-key="74" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/snare.wav"></audio>
 <audio data-key="66" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/kick.wav"></audio>
@@ -157,6 +114,7 @@
 <audio data-key="82" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/ride.wav"></audio>
 <audio data-key="73" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/hihat-open.wav"></audio>
 <audio data-key="75" src="https://raw.githubusercontent.com/ArunMichaelDsouza/javascript-30-course/master/src/01-javascript-drum-kit/sounds/hihat-close.wav"></audio>
+
 </body>
 
 </html>

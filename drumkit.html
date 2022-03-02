@@ -5,74 +5,79 @@
     .background {
        
         margin: 0 200px;
-        width: 600px;
-        height: 400px;
+        width: 800px;
+        height: 600px;
     }       
     .left-hat {
         position: relative;
-        bottom: 325px;
-        left: 279px;
+        transform: scale(1.7);
+        bottom: 440px;
+        right: 878px;
     }
     .right-hat {
         position: relative;
-        bottom: 290px;
-        left: 450px;
+        transform: scale(1.4);
+        bottom: 370px;
+        right: 597px;
         width: 165px;
     }
     .key{
         display: flex;
         border: solid 2px rgb(12, 8, 8);
-        height: 20px;
-        width: 20px;
+        height: 40px;
+        width: 40px;
         justify-content: center;
+        align-items: center;
         position: relative;
         background-color: white;
         transition:all 0.1s;
+        font-size: 1.5rem;
     }
     .playing{
         transform: scale(1.1);
         border: solid 2px rgb(5, 165, 157);
+        background-color: rgb(246, 250, 20);
     }
     .key[data-key="69"]{
-        bottom: 380px;
+        bottom: 530px;
         left: 300px;
     }
     .key[data-key="82"]{
-        bottom: 403px;
-        left: 358px;
+        bottom: 572px;
+        left: 420px;
     }
     .key[data-key="73"]{
-        bottom: 403px;
-        left: 610px;
+        bottom: 540px;
+        left: 730px;
     }
     .key[data-key="75"]{
-        bottom: 425px;
-        left: 690px;
+        bottom: 583px;
+        left: 860px;
     }
     .key[data-key="71"]{
-        bottom: 370px;
-        left: 430px;
+        bottom: 515px;
+        left: 500px;
     }
     .key[data-key="72"]{
 
-        bottom: 385px;
-        left: 540px;
+        bottom: 530px;
+        left: 650px;
     }
     .key[data-key="74"]{
-        bottom: 380px;
-        left: 620px;
+        bottom: 550px;
+        left: 760px;
     }
     .key[data-key="70"]{
-        bottom: 360px;
-        left: 350px;
+        bottom: 530px;
+        left: 400px;
     }
     .key[data-key="86"]{ 
-        bottom: 360px;
-        left: 460px;    
+        bottom: 520px;
+        left: 530px;    
     }
     .key[data-key="66"]{
-        bottom: 383px;
-        left: 520px;
+        bottom: 563px;
+        left: 620px;
     }
 
     </style>
@@ -121,7 +126,6 @@
     }
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-   
-
+    
 </script>
 </html>

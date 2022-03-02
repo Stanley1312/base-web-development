@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+</head>
+<body>
+<div class="clock">
+    <div class="clock-face">
+        <div class="hand second-hand">ádasdasd</div>
+        <div class="hand min-hand">how to uese</div>
+        <div class="hand hour-hand"></div>
+    </div>
+    
+    
+</div>
+</body>
+</html>
